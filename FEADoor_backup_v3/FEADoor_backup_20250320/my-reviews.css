@@ -1,0 +1,232 @@
+/* Estilos da página Minhas Avaliações */
+.my-reviews-page {
+    padding-top: 100px;
+}
+
+/* Cabeçalho da Página */
+.page-header {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-content .subtitle {
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.header-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1rem 2rem;
+    background: #f8f9fa;
+    border-radius: var(--radius);
+    min-width: 120px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+/* Cards de Avaliação */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.review-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.review-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+}
+
+.company-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    object-fit: contain;
+    background: white;
+    padding: 0.5rem;
+    border: 1px solid #eee;
+}
+
+.company-info h3 {
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.company-info h4 {
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.review-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.review-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.edit-btn, .delete-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    background: white;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.edit-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.delete-btn {
+    padding: 0.5rem;
+    color: #dc3545;
+}
+
+.delete-btn:hover {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+/* Conteúdo da Avaliação */
+.review-content {
+    padding: 1.5rem;
+}
+
+.review-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-item i {
+    color: var(--primary);
+}
+
+.review-text h5 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.review-text p {
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.review-text p:last-child {
+    margin-bottom: 0;
+}
+
+.review-metrics {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.metric i {
+    color: var(--primary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .header-stats {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .review-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .review-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .review-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .review-metrics {
+        justify-content: center;
+    }
+} 

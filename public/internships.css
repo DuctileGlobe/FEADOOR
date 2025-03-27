@@ -1,0 +1,680 @@
+/* Estilos do Header */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.add-review-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-review-btn:hover {
+    background-color: var(--primary-light);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* Estilos da página de estágios */
+main {
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 64px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.page-header {
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.header-content .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+    min-width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #1a237e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filters select {
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    min-width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filters select:focus {
+    border-color: #1a237e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+}
+
+/* Grid de Estágios */
+.internships-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Filtros Laterais */
+.filters-sidebar {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.filters-sidebar h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-section h4 {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.filter-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.show-more {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Lista de Estágios */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.results-count h2 {
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.results-count span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.sort-by {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    background: white;
+}
+
+/* Cards de Estágios */
+.internship-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.internship-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.internship-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.company-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.company-header h3 {
+    margin: 0;
+    color: #1a237e;
+    font-size: 1.25rem;
+    flex: 1;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-left: 1rem;
+}
+
+.location-info i {
+    color: #1a237e;
+    font-size: 1rem;
+}
+
+.location-info span {
+    font-size: 0.9rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-value {
+    font-weight: 600;
+    color: #1a237e;
+    font-size: 0.95rem;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    color: #ffd700;
+    font-size: 0.9rem;
+}
+
+.star.empty {
+    color: #ddd;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.detail-item:hover {
+    background: #f0f2f5;
+}
+
+.detail-item i {
+    color: #1a237e;
+    font-size: 1.1rem;
+}
+
+.detail-item span {
+    color: #333;
+    font-weight: 500;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.position-info {
+    margin-bottom: 1.5rem;
+}
+
+.position {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.area {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.benefits-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.benefits-section h4 {
+    color: #1a237e;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.benefits-section h4 i {
+    color: #4caf50;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list li i {
+    color: #4caf50;
+}
+
+.work-environment {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.work-environment h4 {
+    color: #1a237e;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.work-environment h4 i {
+    color: #1a237e;
+}
+
+.environment-points {
+    display: grid;
+    gap: 1rem;
+}
+
+.point-item {
+    padding: 1rem;
+    border-radius: 8px;
+    background: white;
+    border-left: 4px solid;
+}
+
+.point-item.positive {
+    border-left-color: #4caf50;
+}
+
+.point-item.negative {
+    border-left-color: #f44336;
+}
+
+.point-item.neutral {
+    border-left-color: #ff9800;
+}
+
+.point-item h5 {
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.point-item.positive h5 i {
+    color: #4caf50;
+}
+
+.point-item.negative h5 i {
+    color: #f44336;
+}
+
+.point-item.neutral h5 i {
+    color: #ff9800;
+}
+
+.point-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.reconciliation {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.reconciliation h4 {
+    color: #1a237e;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reconciliation h4 i {
+    color: #1a237e;
+}
+
+.reconciliation .rating {
+    margin-top: 0.5rem;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.area-tag {
+    background: #e3f2fd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    color: #1a237e;
+    font-weight: 500;
+}
+
+.view-details {
+    margin-left: auto;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: #1a237e;
+    border: 2px solid #1a237e;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.view-details:hover {
+    background: #1a237e;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Estados vazios e erros */
+.no-internships,
+.error-message {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.no-internships p,
+.error-message p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.no-internships .btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #1a237e;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.no-internships .btn-primary:hover {
+    background: #283593;
+    transform: translateY(-1px);
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.page-btn:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.page-btn.next {
+    width: auto;
+    padding: 0 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .internships-content {
+        grid-template-columns: 200px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .internships-content {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .internship-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 1.5rem;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .filters {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .filters select {
+        width: 100%;
+    }
+
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    .internships-grid {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .internships-content {
+        padding: 5px;
+    }
+} 

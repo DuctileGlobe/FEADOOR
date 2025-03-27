@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="js/login.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>FEADoor</h1>
+                    <span>Avaliações de Estágios</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="login-section">
+            <div class="container">
+                <div class="login-box">
+                    <h2>Acesse sua conta</h2>
+                    <p class="login-subtitle">Entre com seu e-mail USP para acessar o FEADoor</p>
+                    
+                    <!-- Opções de Login -->
+                    <div class="login-options">
+                        <button class="google-login" disabled title="Em breve">
+                            <img src="https://www.google.com/favicon.ico" alt="Google" width="20">
+                            Entrar com Google
+                        </button>
+                        
+                        <div class="divider">
+                            <span>ou</span>
+                        </div>
+                        
+                        <form class="email-login-form">
+                            <div class="form-group">
+                                <label for="email">E-mail USP</label>
+                                <input type="email" id="email" placeholder="seu.nome@usp.br" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Senha</label>
+                                <input type="password" id="password" placeholder="Digite sua senha" required>
+                            </div>
+                            <div class="form-actions">
+                                <label class="remember-me">
+                                    <input type="checkbox">
+                                    Lembrar de mim
+                                </label>
+                                <a href="#" class="forgot-password">Esqueci minha senha</a>
+                            </div>
+                            <button type="submit" class="login-submit">Entrar</button>
+                        </form>
+                    </div>
+                    
+                    <p class="login-footer">
+                        Não tem uma conta? <a href="register.html">Cadastre-se</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>FEADoor © 2024 - Feito por e para alunos da FEA-USP</p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="user-menu.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="dashboard.html">
+                        <h1>FEADoor</h1>
+                        <span>Avaliações de Estágios</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="#" class="active">Estágios</a>
+                    <a href="my-reviews.html">Minhas Avaliações</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="add-review-btn" onclick="window.location.href='add-review.html'">
+                    <i class="fas fa-plus"></i>
+                    Avaliar Estágio
+                </button>
+                <div class="user-menu" onclick="toggleUserMenu()">
+                    <img src="https://ui-avatars.com/api/?name=Aluno+USP&background=1a237e&color=fff" alt="Perfil" class="avatar">
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="user-menu-dropdown">
+                        <div class="user-info">
+                            <div class="user-name">Aluno USP</div>
+                            <div class="user-email">aluno.usp@usp.br</div>
+                        </div>
+                        <div class="menu-items">
+                            <a href="#" class="menu-item logout" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Sair
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Barra de Pesquisa Principal -->
+            <div class="search-bar">
+                <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar por empresa, área ou cargo...">
+                </div>
+                <button class="search-btn">Buscar</button>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- Filtros Laterais -->
+                <aside class="filters-sidebar">
+                    <h3>Filtros</h3>
+                    
+                    <div class="filter-section">
+                        <h4>Área</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> Finanças</label>
+                            <label><input type="checkbox"> Contabilidade</label>
+                            <label><input type="checkbox"> Marketing</label>
+                            <label><input type="checkbox"> Controladoria</label>
+                            <label><input type="checkbox"> Consultoria</label>
+                            <a href="#" class="show-more">Mostrar mais</a>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Faixa Salarial</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> R$0 - R$1.000</label>
+                            <label><input type="checkbox"> R$1.000 - R$2.000</label>
+                            <label><input type="checkbox"> R$2.000 - R$3.000</label>
+                            <label><input type="checkbox"> Acima de R$3.000</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Conciliação com a FEA</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> Fácil</label>
+                            <label><input type="checkbox"> Médio</label>
+                            <label><input type="checkbox"> Difícil</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Processo Seletivo</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> Fácil</label>
+                            <label><input type="checkbox"> Médio</label>
+                            <label><input type="checkbox"> Difícil</label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Lista de Estágios -->
+                <section class="internships-list">
+                    <div class="list-header">
+                        <div class="results-count">
+                            <h2>Estágios</h2>
+                            <span>247 resultados</span>
+                        </div>
+                        <div class="list-controls">
+                            <select class="sort-by">
+                                <option>Ordenar por: Relevância</option>
+                                <option>Maior Salário</option>
+                                <option>Mais Recentes</option>
+                                <option>Melhor Avaliados</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Cards de Estágios -->
+                    <div class="internship-cards">
+                        <!-- Card 1 -->
+                        <div class="internship-card">
+                            <div class="company-info">
+                                <img src="https://logo.clearbit.com/itau.com.br" alt="Itaú" class="company-logo">
+                                <div>
+                                    <h3>Estágio em Investment Banking</h3>
+                                    <h4>Itaú BBA</h4>
+                                    <div class="rating">
+                                        <span class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </span>
+                                        <span class="rating-count">32 avaliações</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>R$ 3.500,00</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Conciliação: Médio</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Processo: Difícil</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="area-tag">Finanças</span>
+                                <span class="area-tag">IB</span>
+                                <button class="view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="internship-card">
+                            <div class="company-info">
+                                <img src="https://logo.clearbit.com/btgpactual.com" alt="BTG Pactual" class="company-logo">
+                                <div>
+                                    <h3>Estágio em Sales & Trading</h3>
+                                    <h4>BTG Pactual</h4>
+                                    <div class="rating">
+                                        <span class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </span>
+                                        <span class="rating-count">28 avaliações</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>R$ 3.200,00</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Conciliação: Difícil</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Processo: Difícil</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="area-tag">Finanças</span>
+                                <span class="area-tag">Trading</span>
+                                <button class="view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="internship-card">
+                            <div class="company-info">
+                                <img src="https://logo.clearbit.com/pwc.com" alt="PwC" class="company-logo">
+                                <div>
+                                    <h3>Estágio em Auditoria</h3>
+                                    <h4>PwC Brasil</h4>
+                                    <div class="rating">
+                                        <span class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </span>
+                                        <span class="rating-count">45 avaliações</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="internship-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <span>R$ 2.800,00</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Conciliação: Fácil</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Processo: Médio</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="area-tag">Auditoria</span>
+                                <span class="area-tag">Contabilidade</span>
+                                <button class="view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paginação -->
+                    <div class="pagination">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <span>...</span>
+                        <button class="page-btn">12</button>
+                        <button class="page-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>FEADoor © 2024 - Feito por e para alunos da FEA-USP</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleUserMenu() {
+            const dropdown = document.querySelector('.user-menu-dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function logout() {
+            // Aqui você pode adicionar a lógica de logout
+            window.location.href = 'index.html';
+        }
+
+        // Fechar o menu quando clicar fora dele
+        document.addEventListener('click', function(event) {
+            const userMenu = document.querySelector('.user-menu');
+            const dropdown = document.querySelector('.user-menu-dropdown');
+            
+            if (!userMenu.contains(event.target) && dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 

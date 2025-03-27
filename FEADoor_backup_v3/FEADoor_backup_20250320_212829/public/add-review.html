@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Avaliação - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="add-review.css">
+    <link rel="stylesheet" href="user-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="dashboard.html">
+                        <h1>FEADoor</h1>
+                        <span>Avaliações de Estágios</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="dashboard.html">Estágios</a>
+                    <a href="my-reviews.html">Minhas Avaliações</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="add-review-btn active">
+                    <i class="fas fa-plus"></i>
+                    Avaliar Estágio
+                </button>
+                <div class="user-menu" onclick="toggleUserMenu()">
+                    <img src="https://ui-avatars.com/api/?name=Aluno+USP&background=1a237e&color=fff" alt="Perfil" class="avatar">
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="user-menu-dropdown">
+                        <div class="user-info">
+                            <div class="user-name">Aluno USP</div>
+                            <div class="user-email">aluno.usp@usp.br</div>
+                        </div>
+                        <div class="menu-items">
+                            <a href="#" class="menu-item logout" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Sair
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="add-review-page">
+        <div class="container">
+            <div class="page-header">
+                <div class="header-content">
+                    <h1>Adicionar Avaliação</h1>
+                    <p class="subtitle">Compartilhe sua experiência de estágio com outros FEAnos</p>
+                </div>
+            </div>
+
+            <!-- Formulário de Avaliação -->
+            <form class="review-form">
+                <!-- Informações da Empresa -->
+                <div class="form-section">
+                    <h2>Informações da Empresa</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="company">Empresa*</label>
+                            <input type="text" id="company" required placeholder="Ex: Itaú BBA">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Cargo*</label>
+                            <input type="text" id="position" required placeholder="Ex: Estágio em Investment Banking">
+                        </div>
+                        <div class="form-group">
+                            <label for="area">Área*</label>
+                            <select id="area" required>
+                                <option value="">Selecione a área</option>
+                                <option>Finanças</option>
+                                <option>Contabilidade</option>
+                                <option>Marketing</option>
+                                <option>Controladoria</option>
+                                <option>Consultoria</option>
+                                <option>Auditoria</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">Salário (R$)*</label>
+                            <input type="number" id="salary" required placeholder="Ex: 3000">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação do Estágio -->
+                <div class="form-section">
+                    <h2>Avaliação do Estágio</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="benefits">Benefícios*</label>
+                            <textarea id="benefits" required placeholder="Descreva os benefícios oferecidos (VR, VA, Plano de Saúde, etc)"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="work-environment">Ambiente de Trabalho*</label>
+                            <textarea id="work-environment" required placeholder="Como é o ambiente de trabalho? Como é a relação com a equipe?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="reconciliation">Conciliação com a FEA*</label>
+                            <select id="reconciliation" required>
+                                <option value="">Selecione a dificuldade</option>
+                                <option>Fácil</option>
+                                <option>Médio</option>
+                                <option>Difícil</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selection-process">Processo Seletivo*</label>
+                            <select id="selection-process" required>
+                                <option value="">Selecione a dificuldade</option>
+                                <option>Fácil</option>
+                                <option>Médio</option>
+                                <option>Difícil</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalhes do Processo Seletivo -->
+                <div class="form-section">
+                    <h2>Detalhes do Processo Seletivo</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="selection-steps">Etapas do Processo*</label>
+                            <textarea id="selection-steps" required placeholder="Descreva as etapas do processo seletivo (testes, entrevistas, etc)"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="tips">Dicas para o Processo</label>
+                            <textarea id="tips" placeholder="Compartilhe dicas para quem quer participar do processo"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                    <button type="submit" class="submit-btn">Publicar Avaliação</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>FEADoor © 2024 - Feito por e para alunos da FEA-USP</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleUserMenu() {
+            const dropdown = document.querySelector('.user-menu-dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function logout() {
+            // Aqui você pode adicionar a lógica de logout
+            window.location.href = 'index.html';
+        }
+
+        // Fechar o menu quando clicar fora dele
+        document.addEventListener('click', function(event) {
+            const userMenu = document.querySelector('.user-menu');
+            const dropdown = document.querySelector('.user-menu-dropdown');
+            
+            if (!userMenu.contains(event.target) && dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 

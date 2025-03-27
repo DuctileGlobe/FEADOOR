@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Avaliações - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="internships.css">
+    <link rel="stylesheet" href="my-reviews.css">
+    <link rel="stylesheet" href="user-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="internships.html">
+                        <h1>FEADoor</h1>
+                        <span>Avaliações de Estágios</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="internships.html">Estágios</a>
+                    <a href="my-reviews.html" class="active">Minhas Avaliações</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="add-review-btn" onclick="window.location.href='add-review.html'">
+                    <i class="fas fa-plus"></i>
+                    Avaliar Estágio
+                </button>
+                <div class="user-menu" onclick="toggleUserMenu()">
+                    <img src="https://ui-avatars.com/api/?name=Aluno+USP&background=1a237e&color=fff" alt="Perfil" class="avatar">
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="user-menu-dropdown">
+                        <div class="user-info">
+                            <div class="user-name" id="userName">Carregando...</div>
+                            <div class="user-email" id="userEmail"></div>
+                        </div>
+                        <div class="menu-items">
+                            <a href="#" class="menu-item logout" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Sair
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="my-reviews-page">
+        <div class="container">
+            <div class="page-header">
+                <div class="header-content">
+                    <h1>Minhas Avaliações</h1>
+                    <p class="subtitle">Gerencie suas avaliações de estágios</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Avaliações Feitas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Avaliações -->
+            <div class="reviews-list">
+                <!-- As avaliações serão inseridas aqui via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/user-menu.js"></script>
+    <script src="js/my-reviews.js"></script>
+</body>
+</html> 

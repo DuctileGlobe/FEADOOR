@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Avaliação - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="add-review.css">
+    <link rel="stylesheet" href="user-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="internships.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="internships.html">
+                        <h1>FEADoor</h1>
+                        <span>Avaliações de Estágios</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="internships.html">Estágios</a>
+                    <a href="my-reviews.html">Minhas Avaliações</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="add-review-btn active">
+                    <i class="fas fa-plus"></i>
+                    Avaliar Estágio
+                </button>
+                <div class="user-menu" onclick="toggleUserMenu()">
+                    <img src="https://ui-avatars.com/api/?name=Aluno+USP&background=1a237e&color=fff" alt="Perfil" class="avatar">
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="user-menu-dropdown">
+                        <div class="user-info">
+                            <div class="user-name" id="userName">Carregando...</div>
+                            <div class="user-email" id="userEmail"></div>
+                        </div>
+                        <div class="menu-items">
+                            <a href="#" class="menu-item logout" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Sair
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="add-review-page">
+        <div class="container">
+            <div class="page-header">
+                <div class="header-content">
+                    <h1>Adicionar Avaliação</h1>
+                    <p class="subtitle">Compartilhe sua experiência de estágio com outros FEAnos</p>
+                </div>
+            </div>
+
+            <!-- Formulário de Avaliação -->
+            <form id="internshipForm" class="review-form">
+                <!-- Informações da Empresa -->
+                <div class="form-section">
+                    <h2>Informações da Empresa</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="companyName">Empresa*</label>
+                            <input type="text" id="companyName" required placeholder="Ex: Itaú BBA">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Cargo*</label>
+                            <input type="text" id="position" required placeholder="Ex: Estágio em Investment Banking">
+                        </div>
+                        <div class="form-group">
+                            <label for="area">Área*</label>
+                            <select id="area" required>
+                                <option value="">Selecione a área</option>
+                                <option value="Finanças">Finanças</option>
+                                <option value="Contabilidade">Contabilidade</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Recursos Humanos">Recursos Humanos</option>
+                                <option value="Consultoria">Consultoria</option>
+                                <option value="Controladoria">Controladoria</option>
+                                <option value="Auditoria">Auditoria</option>
+                                <option value="Mercado Financeiro">Mercado Financeiro</option>
+                                <option value="Outra">Outra</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Localização*</label>
+                            <select id="location" required>
+                                <option value="">Selecione a localização</option>
+                                <option value="Faria Lima">Faria Lima</option>
+                                <option value="Paulista">Paulista</option>
+                                <option value="Berrini">Berrini</option>
+                                <option value="Vila Olímpia">Vila Olímpia</option>
+                                <option value="Centro">Centro</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalhes do Estágio -->
+                <div class="form-section">
+                    <h2>Detalhes do Estágio</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="salary">Salário (R$)*</label>
+                            <input type="number" id="salary" required placeholder="Ex: 3000">
+                        </div>
+                        <div class="form-group">
+                            <label for="workload">Carga Horária Semanal (horas)*</label>
+                            <input type="number" id="workload" min="0" required placeholder="Ex: 30">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="benefits">Benefícios*</label>
+                            <textarea id="benefits" required placeholder="Descreva os benefícios oferecidos (VR, VA, Plano de Saúde, etc)"></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="hasRemote" name="hasRemote">
+                            <label for="hasRemote">Possui opção de trabalho remoto?</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conciliação com a FEA -->
+                <div class="form-section">
+                    <h2>Conciliação com a FEA</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Dificuldade de Conciliação (1-5)*</label>
+                            <div class="rating-numeric">
+                                <input type="number" id="conciliationRating" name="conciliationRating" min="1" max="5" step="1" required>
+                            </div>
+                            <small class="rating-legend">1 = Muito Fácil, 5 = Muito Difícil</small>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="conciliationComments">Comentários sobre a Conciliação*</label>
+                            <textarea id="conciliationComments" required placeholder="Explique os motivos da sua avaliação sobre a dificuldade de conciliar o estágio com a FEA..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processo Seletivo -->
+                <div class="form-section">
+                    <h2>Processo Seletivo</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Dificuldade do Processo (1-5)*</label>
+                            <div class="rating-numeric">
+                                <input type="number" id="processDifficulty" name="processDifficulty" min="1" max="5" step="1" required>
+                            </div>
+                            <small class="rating-legend">1 = Muito Fácil, 5 = Muito Difícil</small>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="processComments">Comentários sobre o Processo*</label>
+                            <textarea id="processComments" required placeholder="Descreva as etapas do processo seletivo e sua experiência..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação Geral -->
+                <div class="form-section">
+                    <h2>Sua Avaliação</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Avaliação Geral (1-5)*</label>
+                            <div class="rating-numeric">
+                                <input type="number" id="rating" name="rating" min="1" max="5" step="1" required>
+                            </div>
+                            <small class="rating-legend">1 = Péssimo, 5 = Excelente</small>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="pros">Pontos Positivos*</label>
+                            <textarea id="pros" required placeholder="Descreva os pontos positivos do estágio..."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="cons">Pontos Negativos*</label>
+                            <textarea id="cons" required placeholder="Descreva os pontos negativos do estágio..."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="learningExperience">Experiência de Aprendizado*</label>
+                            <textarea id="learningExperience" required placeholder="Descreva o que você aprendeu durante o estágio..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='my-reviews.html'">Cancelar</button>
+                    <button type="submit" class="btn-primary">Publicar Avaliação</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/user-menu.js"></script>
+    <script src="js/add-review.js"></script>
+</body>
+</html> 

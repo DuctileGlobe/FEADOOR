@@ -1,0 +1,268 @@
+/* Estilos da página Minhas Avaliações */
+.my-reviews-page {
+    padding: 2rem 0;
+}
+
+/* Cabeçalho da Página */
+.page-header {
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    margin-bottom: 2rem;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.header-content .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.header-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 200px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Cards de Avaliação */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.review-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.company-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: #f5f5f5;
+    padding: 4px;
+}
+
+.company-info h3 {
+    font-size: 1.2rem;
+    color: #1a237e;
+    margin-bottom: 0.25rem;
+}
+
+.company-info h4 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.review-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.review-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.edit-btn, .delete-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.edit-btn {
+    background: #e3f2fd;
+    color: #1a237e;
+}
+
+.edit-btn:hover {
+    background: #bbdefb;
+}
+
+.delete-btn {
+    background: #ffebee;
+    color: #c62828;
+    padding: 0.5rem;
+}
+
+.delete-btn:hover {
+    background: #ffcdd2;
+}
+
+/* Conteúdo da Avaliação */
+.review-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.review-stats {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+.stat-item i {
+    color: #1a237e;
+}
+
+.review-text h5 {
+    font-size: 1rem;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.review-text p {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.review-metrics {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.metric i {
+    color: #1a237e;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .review-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .review-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .review-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .header-stats {
+        flex-direction: column;
+    }
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f5f5f5;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.empty-state p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.empty-state .add-review-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #1a237e;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.empty-state .add-review-btn:hover {
+    background: #0d1642;
+} 

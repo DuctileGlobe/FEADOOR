@@ -1,0 +1,441 @@
+/* Estilos do Header */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.add-review-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-review-btn:hover {
+    background-color: var(--primary-light);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* Estilos da página de estágios */
+main {
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 64px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.page-header {
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.header-content .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+    min-width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #1a237e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filters select {
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    min-width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filters select:focus {
+    border-color: #1a237e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+}
+
+/* Grid de Estágios */
+.internships-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+/* Filtros Laterais */
+.filters-sidebar {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.filters-sidebar h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-section h4 {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.filter-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.show-more {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Lista de Estágios */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.results-count h2 {
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.results-count span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.sort-by {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    background: white;
+}
+
+/* Cards de Estágios */
+.internship-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.internship-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.company-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.company-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius);
+    object-fit: contain;
+    background: white;
+    padding: 0.5rem;
+    border: 1px solid #eee;
+}
+
+.company-info h3 {
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.company-info h4 {
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stars {
+    color: #ffd700;
+}
+
+.rating-count {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.internship-details {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-item i {
+    color: var(--primary);
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.area-tag {
+    background: #f0f0f0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.view-details {
+    margin-left: auto;
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.view-details:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.page-btn:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.page-btn.next {
+    width: auto;
+    padding: 0 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .internships-content {
+        grid-template-columns: 200px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .internships-content {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .header-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .internship-details {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 1.5rem;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .filters {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .filters select {
+        width: 100%;
+    }
+
+    .page-header {
+        margin-bottom: 2rem;
+    }
+
+    .internships-grid {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .internships-content {
+        padding: 5px;
+    }
+} 

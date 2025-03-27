@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estágios - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="internships.css">
+    <link rel="stylesheet" href="user-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="internships.html">
+                        <h1>FEADoor</h1>
+                        <span>Avaliações de Estágios</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="internships.html" class="active">Estágios</a>
+                    <a href="my-reviews.html">Minhas Avaliações</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="add-review-btn" onclick="window.location.href='add-review.html'">
+                    <i class="fas fa-plus"></i>
+                    Avaliar Estágio
+                </button>
+                <div class="user-menu" onclick="toggleUserMenu()">
+                    <img src="https://ui-avatars.com/api/?name=Aluno+USP&background=1a237e&color=fff" alt="Perfil" class="avatar">
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="user-menu-dropdown">
+                        <div class="user-info">
+                            <div class="user-name" id="userName">Carregando...</div>
+                            <div class="user-email" id="userEmail"></div>
+                        </div>
+                        <div class="menu-items">
+                            <a href="#" class="menu-item logout" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Sair
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <div class="header-content">
+                    <h1>Estágios Avaliados</h1>
+                    <p class="subtitle">Confira as experiências compartilhadas por outros FEAnos</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Buscar por empresa, cargo ou área...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filters">
+                        <select id="areaFilter">
+                            <option value="">Todas as áreas</option>
+                            <option value="Finanças">Finanças</option>
+                            <option value="Contabilidade">Contabilidade</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Recursos Humanos">Recursos Humanos</option>
+                            <option value="Consultoria">Consultoria</option>
+                            <option value="Controladoria">Controladoria</option>
+                            <option value="Auditoria">Auditoria</option>
+                            <option value="Mercado Financeiro">Mercado Financeiro</option>
+                            <option value="Outra">Outra</option>
+                        </select>
+                        <select id="locationFilter">
+                            <option value="">Todas as localizações</option>
+                            <option value="Faria Lima">Faria Lima</option>
+                            <option value="Paulista">Paulista</option>
+                            <option value="Berrini">Berrini</option>
+                            <option value="Vila Olímpia">Vila Olímpia</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Estágios -->
+            <div class="internships-grid">
+                <!-- Os cards de estágio serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/user-menu.js"></script>
+    <script src="js/internships.js"></script>
+</body>
+</html> 

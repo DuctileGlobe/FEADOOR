@@ -1,0 +1,282 @@
+/* Estilos da página de adicionar avaliação */
+.add-review-page {
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 64px);
+}
+
+.add-review-page .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 0.5rem;
+}
+
+.page-header .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Estilos do formulário */
+.review-form {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-section {
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h2 {
+    color: #1a237e;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #1a237e;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #1a237e;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Checkbox personalizado */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Sistema de avaliação por estrelas */
+.rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    margin: 0.5rem 0;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    float: right;
+    color: #ddd;
+    font-size: 24px;
+    padding: 0 2px;
+}
+
+.rating label:before {
+    content: '\f005';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.rating input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #ffd700;
+}
+
+.rating input:checked + label:hover,
+.rating input:checked ~ label:hover,
+.rating label:hover ~ input:checked ~ label,
+.rating input:checked ~ label:hover ~ label {
+    color: #ffed4a;
+}
+
+.rating-legend {
+    display: block;
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Sistema de avaliação numérica */
+.rating-numeric {
+    margin: 0.5rem 0;
+}
+
+.rating-numeric input[type="number"] {
+    width: 80px;
+    height: 40px;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.rating-numeric input[type="number"]:focus {
+    border-color: #1a237e;
+    box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+    outline: none;
+}
+
+.rating-numeric input[type="number"]::-webkit-inner-spin-button,
+.rating-numeric input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+    height: 38px;
+    cursor: pointer;
+}
+
+/* Botões de ação */
+.form-actions {
+    padding: 1.5rem 2rem;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #1a237e;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #151b59;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #1a237e;
+    border: 1px solid #1a237e;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .rating label {
+        font-size: 1.25rem;
+    }
+}
+
+/* Validação */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: #dc3545;
+}
+
+.form-group input:invalid:focus,
+.form-group select:invalid:focus,
+.form-group textarea:invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-section {
+    animation: fadeIn 0.3s ease-out;
+} 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+    <script src="js/register.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>FEADoor</h1>
+                    <span>Avaliações de Estágios</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="register-section">
+            <div class="container">
+                <div class="register-box">
+                    <h2>Crie sua conta</h2>
+                    <p class="register-subtitle">Junte-se à comunidade FEADoor</p>
+                    
+                    <form class="register-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Nome Completo*</label>
+                                <input type="text" id="name" required placeholder="Seu nome completo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-mail USP*</label>
+                                <input type="email" id="email" required placeholder="seu.nome@usp.br">
+                                <small class="form-hint">Use seu email institucional @usp.br</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="course">Curso*</label>
+                                <select id="course" required>
+                                    <option value="">Selecione seu curso</option>
+                                    <option value="Administração">Administração</option>
+                                    <option value="Ciências Contábeis">Ciências Contábeis</option>
+                                    <option value="Economia">Economia</option>
+                                    <option value="Atuária">Atuária</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="graduationYear">Ano de Formatura*</label>
+                                <select id="graduationYear" required>
+                                    <option value="">Selecione o ano</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Senha*</label>
+                                <input type="password" id="password" required placeholder="Mínimo 6 caracteres">
+                                <small class="form-hint">A senha deve ter no mínimo 6 caracteres</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirmar Senha*</label>
+                                <input type="password" id="confirmPassword" required placeholder="Digite a senha novamente">
+                            </div>
+                        </div>
+
+                        <div class="form-terms">
+                            <label class="checkbox-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="register-submit">Criar Conta</button>
+                    </form>
+                    
+                    <p class="register-footer">
+                        Já tem uma conta? <a href="login.html">Faça login</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>FEADoor © 2024 - Feito por e para alunos da FEA-USP</p>
+        </div>
+    </footer>
+</body>
+</html> 

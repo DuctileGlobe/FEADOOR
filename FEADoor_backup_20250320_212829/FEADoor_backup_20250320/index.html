@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEADoor - Avaliações de Estágios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>FEADoor</h1>
+                    <span>Avaliações de Estágios</span>
+                </a>
+            </div>
+            <a href="login.html" class="login-button">
+                <img src="https://www.google.com/favicon.ico" alt="Google" width="20">
+                Entrar com E-mail USP
+            </a>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção de Boas-vindas -->
+        <section class="welcome">
+            <div class="container">
+                <h2>Bem-vindo ao FEADoor</h2>
+                <p class="subtitle">Compartilhe e encontre experiências reais de estágios da FEA-USP</p>
+                
+                <div class="features">
+                    <div class="feature-card">
+                        <span class="icon">🔒</span>
+                        <h3>Anônimo</h3>
+                        <p>Suas avaliações são totalmente anônimas</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="icon">✨</span>
+                        <h3>Exclusivo</h3>
+                        <p>Apenas para alunos da FEA-USP</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="icon">💼</span>
+                        <h3>Relevante</h3>
+                        <p>Informações atualizadas sobre estágios</p>
+                    </div>
+                </div>
+                
+                <!-- Formulário de Acesso por Email -->
+                <div class="email-access">
+                    <h3>Acesse com seu E-mail USP</h3>
+                    <form class="email-form" action="login.html" method="get">
+                        <input type="email" name="email" placeholder="seu.nome@usp.br" required>
+                        <button type="submit">Acessar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Avaliações (inicialmente oculta) -->
+        <section class="reviews hidden">
+            <div class="container">
+                <!-- Filtros -->
+                <div class="filters">
+                    <h3>Filtrar Avaliações</h3>
+                    <div class="filter-inputs">
+                        <input type="text" placeholder="Empresa">
+                        <input type="text" placeholder="Área">
+                        <input type="number" placeholder="Salário Mínimo">
+                        <button>Filtrar</button>
+                    </div>
+                </div>
+
+                <!-- Formulário de Nova Avaliação -->
+                <div class="new-review">
+                    <h3>Nova Avaliação</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Empresa</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Área</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Salário</label>
+                            <input type="number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Benefícios</label>
+                            <textarea required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Ambiente de Trabalho</label>
+                            <textarea required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Dificuldade do Processo Seletivo</label>
+                            <select required>
+                                <option value="">Selecione...</option>
+                                <option>Fácil</option>
+                                <option>Médio</option>
+                                <option>Difícil</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Conciliação com a Faculdade</label>
+                            <select required>
+                                <option value="">Selecione...</option>
+                                <option>Fácil</option>
+                                <option>Médio</option>
+                                <option>Difícil</option>
+                            </select>
+                        </div>
+                        <button type="submit">Enviar Avaliação</button>
+                    </form>
+                </div>
+
+                <!-- Lista de Avaliações -->
+                <div class="reviews-list">
+                    <h3>Avaliações Recentes</h3>
+                    <div class="reviews-grid">
+                        <!-- As avaliações serão inseridas aqui dinamicamente -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>FEADoor © 2024 - Feito por e para alunos da FEA-USP</p>
+        </div>
+    </footer>
+</body>
+</html>

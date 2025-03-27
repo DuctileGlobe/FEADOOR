@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Avaliações - FEADoor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="my-reviews.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="dashboard.html">
+                        <h1>FEADoor</h1>
+                        <span>Avaliações de Estágios</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <a href="dashboard.html">Estágios</a>
+                    <a href="my-reviews.html" class="active">Minhas Avaliações</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="add-review-btn" onclick="window.location.href='add-review.html'">
+                    <i class="fas fa-plus"></i>
+                    Avaliar Estágio
+                </button>
+                <div class="user-menu">
+                    <img src="https://ui-avatars.com/api/?name=Aluno+USP&background=1a237e&color=fff" alt="Perfil" class="avatar">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="my-reviews-page">
+        <div class="container">
+            <div class="page-header">
+                <div class="header-content">
+                    <h1>Minhas Avaliações</h1>
+                    <p class="subtitle">Gerencie suas avaliações de estágios</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Avaliações Feitas</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">127</span>
+                        <span class="stat-label">Visualizações</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Curtidas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Avaliações -->
+            <div class="reviews-list">
+                <!-- Avaliação 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="company-info">
+                            <img src="https://logo.clearbit.com/itau.com.br" alt="Itaú" class="company-logo">
+                            <div>
+                                <h3>Estágio em Investment Banking</h3>
+                                <h4>Itaú BBA</h4>
+                                <span class="review-date">Avaliado em 15/03/2024</span>
+                            </div>
+                        </div>
+                        <div class="review-actions">
+                            <button class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                                Editar
+                            </button>
+                            <button class="delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="review-content">
+                        <div class="review-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>R$ 3.500,00</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Conciliação: Médio</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Processo: Difícil</span>
+                            </div>
+                        </div>
+                        
+                        <div class="review-text">
+                            <h5>Benefícios</h5>
+                            <p>VR de R$1.200, VA de R$800, Home Office 3x na semana, Gympass, Plano de Saúde Bradesco.</p>
+                            
+                            <h5>Ambiente de Trabalho</h5>
+                            <p>Ambiente desafiador mas com boa cultura de feedback. Time muito capacitado e disposto a ensinar. Reuniões semanais de acompanhamento com o gestor.</p>
+                        </div>
+
+                        <div class="review-metrics">
+                            <div class="metric">
+                                <i class="fas fa-eye"></i>
+                                <span>52 visualizações</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>7 curtidas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="company-info">
+                            <img src="https://logo.clearbit.com/pwc.com" alt="PwC" class="company-logo">
+                            <div>
+                                <h3>Estágio em Auditoria</h3>
+                                <h4>PwC Brasil</h4>
+                                <span class="review-date">Avaliado em 10/02/2024</span>
+                            </div>
+                        </div>
+                        <div class="review-actions">
+                            <button class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                                Editar
+                            </button>
+                            <button class="delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="review-content">
+                        <div class="review-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>R$ 2.800,00</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Conciliação: Fácil</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Processo: Médio</span>
+                            </div>
+                        </div>
+                        
+                        <div class="review-text">
+                            <h5>Benefícios</h5>
+                            <p>VR de R$900, VA de R$600, Home Office 2x na semana, Plano de Saúde Amil, Curso de Inglês.</p>
+                            
+                            <h5>Ambiente de Trabalho</h5>
+                            <p>Ótimo ambiente para aprender sobre contabilidade na prática. Gestores acessíveis e trabalho em equipe constante. Viagens frequentes para clientes.</p>
+                        </div>
+
+                        <div class="review-metrics">
+                            <div class="metric">
+                                <i class="fas fa-eye"></i>
+                                <span>45 visualizações</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>5 curtidas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avaliação 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="company-info">
+                            <img src="https://logo.clearbit.com/btgpactual.com" alt="BTG" class="company-logo">
+                            <div>
+                                <h3>Estágio em Sales & Trading</h3>
+                                <h4>BTG Pactual</h4>
+                                <span class="review-date">Avaliado em 05/01/2024</span>
+                            </div>
+                        </div>
+                        <div class="review-actions">
+                            <button class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                                Editar
+                            </button>
+                            <button class="delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="review-content">
+                        <div class="review-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>R$ 3.200,00</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Conciliação: Difícil</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Processo: Difícil</span>
+                            </div>
+                        </div>
+                        
+                        <div class="review-text">
+                            <h5>Benefícios</h5>
+                            <p>VR de R$1.500, VA de R$1.000, Academia no prédio, Plano de Saúde Premium, Bônus semestral.</p>
+                            
+                            <h5>Ambiente de Trabalho</h5>
+                            <p>Ambiente muito intenso e desafiador. Horário estendido mas com grande aprendizado. Exposição direta ao mercado financeiro e aos traders seniores.</p>
+                        </div>
+
+                        <div class="review-metrics">
+                            <div class="metric">
+                                <i class="fas fa-eye"></i>
+                                <span>30 visualizações</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>3 curtidas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>FEADoor © 2024 - Feito por e para alunos da FEA-USP</p>
+        </div>
+    </footer>
+</body>
+</html> 
