@@ -85,6 +85,30 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        const workloadInput = document.getElementById('workload').value;
+        if (!workloadInput || workloadInput.trim() === '') {
+            showError('A carga horária é obrigatória');
+            return;
+        }
+
+        const workload = parseFloat(workloadInput);
+        if (isNaN(workload)) {
+            showError('A carga horária deve ser um número válido');
+            return;
+        }
+
+        if (workload <= 0 || workload > 60) {
+            showError('A carga horária deve estar entre 0 e 60 horas');
+            return;
+        }
+
+        // Log para debug do valor do workload
+        console.log('Valor do workload antes de criar formData:', {
+            input: workloadInput,
+            parsed: workload,
+            type: typeof workload
+        });
+
         const rating = parseInt(document.getElementById('rating').value);
         const conciliationRating = parseInt(document.getElementById('conciliationRating').value);
         const processDifficulty = parseInt(document.getElementById('processDifficulty').value);
@@ -103,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
             area: document.getElementById('area').value.trim(),
             location: document.getElementById('location').value.trim(),
             salary: salary,
-            workload: parseInt(document.getElementById('workload').value),
+            workload: workload,
             benefits: document.getElementById('benefits').value.trim(),
             rating: rating,
             conciliationRating: conciliationRating,
@@ -115,6 +139,13 @@ document.addEventListener('DOMContentLoaded', function() {
             learningExperience: document.getElementById('learningExperience').value.trim(),
             hasRemote: document.getElementById('hasRemote').checked
         };
+
+        // Log para debug dos dados a serem enviados
+        console.log('Dados a serem enviados:', {
+            formData,
+            workloadType: typeof formData.workload,
+            workloadValue: formData.workload
+        });
 
         try {
             const token = localStorage.getItem('token');
@@ -130,6 +161,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify(formData)
+            });
+
+            // Log para debug da resposta
+            console.log('Resposta do servidor:', {
+                status: response.status,
+                ok: response.ok
             });
 
             if (!response.ok) {

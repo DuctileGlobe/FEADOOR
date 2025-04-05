@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 </div>
                                 <div class="detail-item">
                                     <i class="fas fa-clock"></i>
-                                    <span>${internship.work_schedule || 'Jornada não especificada'}</span>
+                                    <span>${internship.workload || 'N/A'} horas/semana</span>
                                 </div>
                             </div>
 

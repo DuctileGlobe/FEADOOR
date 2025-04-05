@@ -33,6 +33,24 @@ const Internship = sequelize.define('Internship', {
             }
         }
     },
+    workload: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        validate: {
+            notNull: { msg: 'A carga horária é obrigatória' },
+            isNumeric: {
+                msg: 'A carga horária deve ser um número'
+            },
+            min: {
+                args: [0],
+                msg: 'A carga horária deve ser maior que zero'
+            },
+            max: {
+                args: [60],
+                msg: 'A carga horária deve ser menor que 60 horas'
+            }
+        }
+    },
     benefits: {
         type: DataTypes.TEXT,
         allowNull: true

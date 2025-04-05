@@ -2,8 +2,11 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 // Gerar token JWT
-const generateToken = (userId) => {
-    return jwt.sign({ userId }, process.env.JWT_SECRET, {
+const generateToken = (user) => {
+    return jwt.sign({ 
+        id: user.id,
+        role: user.role 
+    }, process.env.JWT_SECRET || 'your-secret-key', {
         expiresIn: '7d'
     });
 };
@@ -34,7 +37,7 @@ const register = async (req, res) => {
         });
 
         // Gerar token
-        const token = generateToken(user.id);
+        const token = generateToken(user);
 
         // Retornar usuário e token (sem a senha)
         const userResponse = user.toJSON();
@@ -76,7 +79,7 @@ const login = async (req, res) => {
         }
 
         // Gerar token
-        const token = generateToken(user.id);
+        const token = generateToken(user);
 
         // Retornar usuário e token (sem a senha)
         const userResponse = user.toJSON();

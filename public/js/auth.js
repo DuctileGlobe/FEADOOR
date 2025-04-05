@@ -26,9 +26,17 @@ async function loadUserProfile() {
 
         const user = await response.json();
         
-        // Atualiza os elementos do perfil
-        document.getElementById('userName').textContent = user.name;
-        document.getElementById('userEmail').textContent = user.email;
+        // Atualiza os elementos do perfil apenas se eles existirem
+        const userNameElement = document.getElementById('userName');
+        const userEmailElement = document.getElementById('userEmail');
+        
+        if (userNameElement) {
+            userNameElement.textContent = user.name;
+        }
+        
+        if (userEmailElement) {
+            userEmailElement.textContent = user.email;
+        }
 
         return user;
     } catch (error) {

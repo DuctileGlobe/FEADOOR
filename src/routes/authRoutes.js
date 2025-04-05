@@ -6,6 +6,31 @@ const { User } = require('../models');
 
 const router = express.Router();
 
+// Rota especial para criar o primeiro administrador (só pode ser usada uma vez)
+let firstAdminCreated = false;
+router.post('/create-first-admin', async (req, res) => {
+    if (firstAdminCreated) {
+        return res.status(403).json({ error: 'O primeiro administrador já foi criado' });
+    }
+
+    try {
+        const user = await User.findOne({
+            where: { email: 'ianeliascl@usp.br' }
+        });
+
+        if (!user) {
+            return res.status(404).json({ error: 'Usuário não encontrado' });
+        }
+
+        await user.update({ role: 'admin' });
+        firstAdminCreated = true;
+        res.json({ message: 'Primeiro administrador criado com sucesso' });
+    } catch (error) {
+        console.error('Erro ao criar primeiro admin:', error);
+        res.status(500).json({ error: 'Erro ao criar primeiro administrador' });
+    }
+});
+
 // Rota de registro
 router.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
@@ -64,7 +89,7 @@ router.post('/login', async (req, res) => {
 
         // Gera o token JWT
         const token = jwt.sign(
-            { id: user.id, email: user.email },
+            { id: user.id, email: user.email, role: user.role },
             process.env.JWT_SECRET || 'your-secret-key',
             { expiresIn: '24h' }
         );
@@ -74,7 +99,8 @@ router.post('/login', async (req, res) => {
             user: {
                 id: user.id,
                 name: user.name,
-                email: user.email
+                email: user.email,
+                role: user.role
             }
         });
     } catch (error) {
@@ -87,7 +113,7 @@ router.post('/login', async (req, res) => {
 router.get('/profile', authenticateToken, async (req, res) => {
     try {
         const user = await User.findByPk(req.user.id, {
-            attributes: ['id', 'name', 'email']
+            attributes: ['id', 'name', 'email', 'role']
         });
         
         if (!user) {

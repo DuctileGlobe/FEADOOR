@@ -4,9 +4,9 @@ const internshipController = require('../controllers/internshipController');
 const { authenticateToken } = require('../middlewares/authMiddleware');
 
 // Rotas públicas
+router.get('/search', internshipController.searchByCompany);
 router.get('/public', internshipController.listInternships);
 router.get('/public/:id', internshipController.getInternship);
-router.get('/search', internshipController.searchByCompany);
 
 // Rotas protegidas (requer autenticação)
 router.use(authenticateToken);

@@ -44,8 +44,12 @@ async function handleLogin(e) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         
-        // Redireciona para o dashboard
-        window.location.href = '/internships.html';
+        // Verifica se o usuário é admin e redireciona para a página correta
+        if (data.user.role === 'admin') {
+            window.location.href = '/admin.html';
+        } else {
+            window.location.href = '/internships.html';
+        }
     } catch (error) {
         console.error('Erro:', error);
         alert(error.message || 'Erro ao fazer login. Por favor, tente novamente.');

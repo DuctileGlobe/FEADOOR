@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -6,6 +5,7 @@ const sequelize = require('./src/config/database');
 const models = require('./src/models');
 const authRoutes = require('./src/routes/authRoutes');
 const internshipRoutes = require('./src/routes/internshipRoutes');
+const adminRoutes = require('./src/routes/adminRoutes');
 
 const app = express();
 
@@ -17,6 +17,7 @@ app.use(express.static('public'));
 // Rotas da API
 app.use('/api/auth', authRoutes);
 app.use('/api/internships', internshipRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Rota principal para servir o frontend
 app.get('/', (req, res) => {

@@ -1,6 +1,43 @@
 const { Internship, User } = require('../models');
 const { Op } = require('sequelize');
 
+exports.searchByCompany = async (req, res) => {
+    try {
+        const { company } = req.query;
+        
+        if (!company) {
+            return res.status(400).json({ error: 'Parâmetro de busca é obrigatório' });
+        }
+
+        const internships = await Internship.findAll({
+            where: {
+                company_name: {
+                    [Op.like]: `%${company}%`
+                }
+            },
+            attributes: [
+                'id',
+                'position',
+                'company_name',
+                'company_domain',
+                'salary',
+                'workload',
+                'benefits',
+                'work_environment',
+                'reconciliation_difficulty',
+                'process_difficulty',
+                'createdAt'
+            ],
+            order: [['createdAt', 'DESC']]
+        });
+
+        res.json(internships);
+    } catch (error) {
+        console.error('Erro ao buscar estágios:', error);
+        res.status(500).json({ error: 'Erro ao buscar estágios' });
+    }
+};
+
 exports.listInternships = async (req, res) => {
     try {
         const internships = await Internship.findAll({
@@ -10,6 +47,7 @@ exports.listInternships = async (req, res) => {
                 'company_name',
                 'company_domain',
                 'salary',
+                'workload',
                 'benefits',
                 'work_environment',
                 'reconciliation_difficulty',
@@ -60,22 +98,79 @@ exports.createInternship = async (req, res) => {
             conciliationComments,
             processDifficulty,
             processComments,
-            pros,
+            pros,           
             cons,
             learningExperience,
             hasRemote
         } = req.body;
+
+        // Log para debug
+        console.log('Dados recebidos:', {
+            companyName,
+            position,
+            area,
+            location,
+            salary,
+            workload,
+            benefits,
+            rating,
+            conciliationRating,
+            conciliationComments,
+            processDifficulty,
+            processComments,
+            pros,           
+            cons,
+            learningExperience,
+            hasRemote
+        });
+
+        // Validação adicional para o campo workload
+        if (workload === undefined || workload === null || workload === '') {
+            return res.status(400).json({
+                error: 'Erro de validação',
+                errors: ['A carga horária é obrigatória']
+            });
+        }
+
+        const workloadNum = parseFloat(workload);
+        if (isNaN(workloadNum)) {
+            return res.status(400).json({
+                error: 'Erro de validação',
+                errors: ['A carga horária deve ser um número válido']
+            });
+        }
+
+        if (workloadNum <= 0 || workloadNum > 60) {
+            return res.status(400).json({
+                error: 'Erro de validação',
+                errors: ['A carga horária deve estar entre 0 e 60 horas']
+            });
+        }
+
+        // Log para debug do valor exato
+        console.log('Valor do workload antes de salvar:', {
+            original: workload,
+            parsed: workloadNum,
+            type: typeof workloadNum
+        });
 
         const internship = await Internship.create({
             company_name: companyName,
             position,
             company_domain: `${area} - ${location}${hasRemote ? ' (Remoto)' : ''}`,
             salary,
+            workload: workloadNum,
             benefits,
             work_environment: `${pros}\n\nPontos Negativos:\n${cons}\n\nAprendizado:\n${learningExperience}\n\nProcesso Seletivo:\n${processComments}`,
             reconciliation_difficulty: conciliationRating,
             process_difficulty: processDifficulty,
             UserId: req.user.id
+        });
+
+        // Log para debug do valor após salvar
+        console.log('Valor do workload após salvar:', {
+            saved: internship.workload,
+            type: typeof internship.workload
         });
 
         res.status(201).json(internship);
@@ -163,52 +258,6 @@ exports.deleteInternship = async (req, res) => {
     }
 };
 
-exports.searchByCompany = async (req, res) => {
-    const { query } = req.query;
-    
-    try {
-        const internships = await Internship.findAll({
-            where: {
-                [Op.or]: [
-                    {
-                        company_name: {
-                            [Op.like]: `%${query}%`
-                        }
-                    },
-                    {
-                        position: {
-                            [Op.like]: `%${query}%`
-                        }
-                    },
-                    {
-                        company_domain: {
-                            [Op.like]: `%${query}%`
-                        }
-                    }
-                ]
-            },
-            attributes: [
-                'id',
-                'position',
-                'company_name',
-                'company_domain',
-                'salary',
-                'benefits',
-                'work_environment',
-                'reconciliation_difficulty',
-                'process_difficulty',
-                'createdAt'
-            ],
-            order: [['createdAt', 'DESC']]
-        });
-        
-        res.json(internships);
-    } catch (error) {
-        console.error('Erro ao buscar estágios:', error);
-        res.status(500).json({ error: 'Erro ao buscar estágios' });
-    }
-};
-
 exports.listUserInternships = async (req, res) => {
     try {
         const internships = await Internship.findAll({
@@ -221,6 +270,7 @@ exports.listUserInternships = async (req, res) => {
                 'company_name',
                 'company_domain',
                 'salary',
+                'workload',
                 'benefits',
                 'work_environment',
                 'reconciliation_difficulty',
@@ -234,4 +284,4 @@ exports.listUserInternships = async (req, res) => {
         console.error('Erro ao listar estágios do usuário:', error);
         res.status(500).json({ error: 'Erro ao listar estágios do usuário' });
     }
-}; 
+};
