@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
 
                 return `
-                    <div class="internship-card">
+                    <div class="internship-card" data-id="${internship.id}">
                         <div class="card-header">
                             <div class="company-header">
                                 <h3>${internship.company_name || 'Empresa não especificada'}</h3>
@@ -239,6 +239,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                     </div>
                 `;
             }).join('');
+
+            // Adiciona event listener de clique aos cards de estágio
+            const cards = internshipsContainer.querySelectorAll('.internship-card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const internshipId = card.getAttribute('data-id');
+                    window.location.href = `/internship-details.html?id=${internshipId}`;
+                });
+            });
 
         } catch (error) {
             console.error('Erro:', error);

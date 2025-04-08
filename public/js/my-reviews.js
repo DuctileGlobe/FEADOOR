@@ -111,16 +111,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             <p>${review.work_environment || 'Não especificado'}</p>
                         </div>
 
-                        <div class="review-metrics">
-                            <div class="metric">
-                                <i class="fas fa-eye"></i>
-                                <span>${review.views || 0} visualizações</span>
-                            </div>
-                            <div class="metric">
-                                <i class="fas fa-thumbs-up"></i>
-                                <span>${review.likes || 0} curtidas</span>
-                            </div>
-                        </div>
+                    
                     </div>
                 </div>
             `).join('');
