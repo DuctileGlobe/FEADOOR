@@ -54,21 +54,14 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="graduationYear">Ano de Formatura*</label>
-                                <select id="graduationYear" required>
-                                    <option value="">Selecione o ano</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                    <option value="2026">2026</option>
-                                    <option value="2027">2027</option>
-                                    <option value="2028">2028</option>
-                                </select>
+                                <label for="entryYear">Ano de Entrada*</label>
+                                <input type="number" id="entryYear" required placeholder="Ex: 2023" min="1900" max="2099" step="1">
                             </div>
 
                             <div class="form-group">
-                                <label for="password">Senha*</label>
-                                <input type="password" id="password" required placeholder="Mínimo 6 caracteres">
-                                <small class="form-hint">A senha deve ter no mínimo 6 caracteres</small>
+                                <label for="password">Senha:</label>
+                                <input type="password" id="password" name="password" required>
+                                <small style="color: red;">Não use a mesma senha que você usa no Jupiter ou no Moodle.</small>
                             </div>
 
                             <div class="form-group">
